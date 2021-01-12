@@ -1,0 +1,243 @@
+{
+  "command": [
+    {
+      "name": "help",
+      "actions": [
+        {
+          "name": "help menu",
+          "category": "Message",
+          "type": "Send Embed",
+          "fields": [
+            {
+              "name": "!help",
+              "value": "Shows this menu",
+              "inline": "true"
+            },
+            {
+              "name": "!info",
+              "value": "Shows some info",
+              "inline": "true"
+            }
+          ],
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "1FFF57",
+          "title": "Help Menu",
+          "url": "",
+          "authorname": "Bot Name Here",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "This is the embed description, replace this with some info about your bot!",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "Ticket",
+      "actions": [
+        {
+          "name": "Ticket maker",
+          "category": "Channel Action",
+          "type": "Create Channel",
+          "channelname": "Support ticket",
+          "reason": "",
+          "channeltype": "Text",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        },
+        {
+          "name": "properties",
+          "category": "Channel Action",
+          "type": "Channel Properties",
+          "channelprop": "CategoryParent",
+          "channelinfo": "▬▬▬▬▬▬ Support ▬▬▬▬▬▬"
+        },
+        {
+          "name": "get dm info_1",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "Support ticket ",
+          "messagetext": "<@${dbsVars.CommandAuthor.id}>",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    },
+    {
+      "name": "enter",
+      "actions": [
+        {
+          "name": "draw number",
+          "category": "Variable",
+          "type": "Generate Random Number",
+          "varname": "number",
+          "min": "1",
+          "max": "1000",
+          "savevartype": "server"
+        },
+        {
+          "name": "Get User",
+          "category": "Message",
+          "type": "Send Message",
+          "channelname": "staff-chat",
+          "messagetext": "Username: <@${dbsVars.CommandAuthor.id}> entered the draw\nDraw entry number: ${serverVars.number}",
+          "savetovariable": "",
+          "savetovariabletype": "server"
+        },
+        {
+          "name": "Completed!",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "00FF08",
+          "title": "Entry Success",
+          "url": "",
+          "authorname": "Virtual Reality Hub Bot",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "<@${dbsVars.CommandAuthor.id}> You've entered to draw! Your draw entry number is: ${serverVars.number}. ",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "server"
+        }
+      ]
+    },
+    {
+      "name": "partner",
+      "actions": [
+        {
+          "name": "description",
+          "category": "Variable",
+          "type": "Store Value in Variable",
+          "varname": "description of ad",
+          "vartype": "Text",
+          "savevartype": "server",
+          "param": "0"
+        },
+        {
+          "name": "Confirm",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FFF712",
+          "title": "Almost done!",
+          "url": "",
+          "authorname": "Virtual Reality Hub Partner System",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "Description:\n\n${serverVars.description of ad}\n----------------------------------\n**Ready to confirm your post?**",
+          "thumbnail": "",
+          "image": "",
+          "footer": "",
+          "timestamp": "false",
+          "savetovariable": "Advertisment",
+          "savetovariabletype": "server"
+        },
+        {
+          "name": "send or no?",
+          "category": "Reaction",
+          "type": "Add Reaction Listener",
+          "reactionActions": {
+            "✅": [
+              {
+                "name": "Confirm_1",
+                "category": "Message",
+                "type": "Send Embed",
+                "channelname": "partnered-servers",
+                "color": "00FF08",
+                "title": "Partnered Server:",
+                "url": "",
+                "authorname": "Virtual Reality Hub Partner System",
+                "authorimageurl": "",
+                "authorlink": "",
+                "description": "${serverVars.description of ad}\n----------------------------------\nSent by: ${dbsVars.CommandAuthor.id}",
+                "thumbnail": "",
+                "image": "",
+                "footer": "",
+                "timestamp": "false",
+                "savetovariable": "",
+                "savetovariabletype": "temp"
+              },
+              {
+                "name": "Confirm_1_1_1",
+                "category": "Message",
+                "type": "Send Embed",
+                "channelname": "${dbsVars.CommandChannel.id}",
+                "color": "00FFDD",
+                "title": "Success!",
+                "url": "",
+                "authorname": "Virtual Reality Hub Partner System",
+                "authorimageurl": "",
+                "authorlink": "",
+                "description": " Your post was sent, and it was sent to #patnered-servers!",
+                "thumbnail": "",
+                "image": "",
+                "footer": "",
+                "timestamp": "false",
+                "savetovariable": "",
+                "savetovariabletype": "temp"
+              }
+            ],
+            "❌": [
+              {
+                "name": "Confirm_1_1",
+                "category": "Message",
+                "type": "Send Embed",
+                "channelname": "${dbsVars.CommandChannel.id}",
+                "color": "FF2B2B",
+                "title": "Failed",
+                "url": "",
+                "authorname": "Virtual Reality Hub Error Reporter",
+                "authorimageurl": "",
+                "authorlink": "",
+                "description": "Your cancelled your post, and it was not sent!",
+                "thumbnail": "",
+                "image": "",
+                "footer": "",
+                "timestamp": "false",
+                "savetovariable": "",
+                "savetovariabletype": "temp"
+              }
+            ]
+          },
+          "message": "${serverVars.Advertisment.id}",
+          "duration": "35",
+          "reactionemoji": "reactionemoji",
+          "reactionuser": "reactionuser",
+          "react": "BOOL_TRUE@@"
+        }
+      ]
+    },
+    {
+      "name": "partnerhelp",
+      "actions": [
+        {
+          "name": "Confirm_2",
+          "category": "Message",
+          "type": "Send Embed",
+          "channelname": "${dbsVars.CommandChannel.id}",
+          "color": "FFF712",
+          "title": "How to use the partner cmd.",
+          "url": "",
+          "authorname": "Virtual Reality Hub Partner System",
+          "authorimageurl": "",
+          "authorlink": "",
+          "description": "**Please post your advertisement!**\n\n**Ex.*partner :tada: Welcome from all of us at VR Hub:tada: \n\n:arrow_down:About Us:arrow_down:\n\n Virtual Reality Hub is the main server for all things VR. The VR Hub Community is ever-growing and would like to invite you to join to help spread the future of gaming through the gateway of VR!  We offer a variety of things, including active support to get you going on your VR journey, VR news, and much more! See what else we offer below!\n\n----------------------------------------------------------------------------\n:arrow_down:What we have to offer:arrow_down:\n\n:crown:  -Custom Website, with all the new VR news, Content creator section, partner/advertising section and free advertising  as well as content creator ads (free) and more.\n\n:first_place: - Extensive Reaction roles, with massive VR headset list, and other VR related roles!\n\n:speech_balloon:  -Active members!\n\n:speaking_head: - Voice chats!\n\n:calling: Server events and meetups! \n\n:incoming_envelope:  -Fast VR Support, for headsets, software and much more! \n\n:newspaper: -Daily VR news from new headsets to new and upcoming games releases, announcements, and software updates\n\n:desktop: -Featured YouTube content from popular YouTubers, and our server YouTubers get their content posted in our YouTube feed, as well as the ability to post patreon links in server through our free content creator partnership program. (You also get a space on our website to post content!)\n\n:handshake: -We do server partnering as well! (No requirements)\n\n:comet: -Free website advertising space available!\n\n:factory: -Active growing community!\n--------------------------------------------------------------------------------------\n\n:bell: So what are you waiting for? If you like VR then this is the server for you! Join us below!\n\n(Links:)\n-Banner:\nhttps://media.giphy.com/media/35MG6KoNC3zyAkGes0/giphy.gif\n\n-Website:\nhttp://virtualrealityhub.xyz/**",
+          "thumbnail": "",
+          "image": "",
+          "footer": "MAKER SURE TO INCLUDE ALL MEDIA LINKS!",
+          "timestamp": "false",
+          "savetovariable": "",
+          "savetovariabletype": "temp"
+        }
+      ]
+    }
+  ]
+}

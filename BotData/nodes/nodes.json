@@ -1,0 +1,751 @@
+{
+  "nodes": [
+    {
+      "type": "command",
+      "name": "help",
+      "guid": "7942fe4c-dffa-4146-8cab-d254b3d80d5d",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "37eda463-a170-44f9-af54-61378ffc9294"
+          ]
+        }
+      ],
+      "x": 148,
+      "y": 188
+    },
+    {
+      "type": "response",
+      "name": "help menu",
+      "guid": "37eda463-a170-44f9-af54-61378ffc9294",
+      "reactionFields": [],
+      "embedfields": [
+        {
+          "name": "!help",
+          "value": "Shows this menu",
+          "inline": "true"
+        },
+        {
+          "name": "!info",
+          "value": "Shows some info",
+          "inline": "true"
+        }
+      ],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7942fe4c-dffa-4146-8cab-d254b3d80d5d"
+        }
+      ],
+      "x": 345,
+      "y": 182,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "1FFF57",
+        "Help Menu",
+        "",
+        "Bot Name Here",
+        "",
+        "",
+        "This is the embed description, replace this with some info about your bot!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "Ticket",
+      "guid": "78fafaf3-8c42-4640-bdda-828283f9d4b1",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "ad087a55-2e18-4b5c-a686-f03d69870960"
+          ]
+        }
+      ],
+      "x": 255,
+      "y": 331
+    },
+    {
+      "type": "response",
+      "name": "Ticket maker",
+      "guid": "ad087a55-2e18-4b5c-a686-f03d69870960",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "aefda645-5ae9-41ff-9137-a376683f608b"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "78fafaf3-8c42-4640-bdda-828283f9d4b1"
+        }
+      ],
+      "x": 449,
+      "y": 345,
+      "rtype": "Channel Action",
+      "rsubtype": "Create Channel",
+      "formdata": [
+        "Support ticket",
+        "",
+        "Text",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "reason",
+        "channeltype",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "properties",
+      "guid": "aefda645-5ae9-41ff-9137-a376683f608b",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "e9111201-9994-4b99-9053-e00425e7153b"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "ad087a55-2e18-4b5c-a686-f03d69870960"
+        }
+      ],
+      "x": 625,
+      "y": 346,
+      "rtype": "Channel Action",
+      "rsubtype": "Channel Properties",
+      "formdata": [
+        "CategoryParent",
+        "▬▬▬▬▬▬ Support ▬▬▬▬▬▬"
+      ],
+      "formnames": [
+        "channelprop",
+        "channelInfo"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "get dm info_1",
+      "guid": "e9111201-9994-4b99-9053-e00425e7153b",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "aefda645-5ae9-41ff-9137-a376683f608b"
+        }
+      ],
+      "x": 797,
+      "y": 352,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "Support ticket ",
+        "<@${dbsVars.CommandAuthor.id}>",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "enter",
+      "guid": "2322308b-dc17-4c4d-9c29-f0e5db11e554",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "600c6368-c1df-4d35-906c-8978a050c1ec"
+          ]
+        }
+      ],
+      "x": 247,
+      "y": 474
+    },
+    {
+      "type": "response",
+      "name": "Get User",
+      "guid": "2f2858c3-0286-49b8-a21f-f10b1ff4f8c0",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "523e091b-aa95-47bc-ad60-ec8f557ae967"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "600c6368-c1df-4d35-906c-8978a050c1ec"
+        }
+      ],
+      "x": 690,
+      "y": 478,
+      "rtype": "Message",
+      "rsubtype": "Send Message",
+      "formdata": [
+        "staff-chat",
+        "Username: <@${dbsVars.CommandAuthor.id}> entered the draw\nDraw entry number: ${serverVars.number}",
+        "",
+        "server"
+      ],
+      "formnames": [
+        "channelName",
+        "messageText",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "draw number",
+      "guid": "600c6368-c1df-4d35-906c-8978a050c1ec",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "2f2858c3-0286-49b8-a21f-f10b1ff4f8c0"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2322308b-dc17-4c4d-9c29-f0e5db11e554"
+        }
+      ],
+      "x": 489,
+      "y": 470,
+      "rtype": "Variable",
+      "rsubtype": "Generate Random Number",
+      "formdata": [
+        "number",
+        "1",
+        "1000",
+        "server"
+      ],
+      "formnames": [
+        "varname",
+        "min",
+        "max",
+        "saveVarType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Completed!",
+      "guid": "523e091b-aa95-47bc-ad60-ec8f557ae967",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2f2858c3-0286-49b8-a21f-f10b1ff4f8c0"
+        }
+      ],
+      "x": 849,
+      "y": 495,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00FF08",
+        "Entry Success",
+        "",
+        "Virtual Reality Hub Bot",
+        "",
+        "",
+        "<@${dbsVars.CommandAuthor.id}> You've entered to draw! Your draw entry number is: ${serverVars.number}. ",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "server"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "partner",
+      "guid": "7810ad8d-5963-4cc0-91b2-9247730bcc14",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "efda83f4-3597-4d6b-93f5-f44001f8e3b7"
+          ]
+        }
+      ],
+      "x": 294,
+      "y": 648
+    },
+    {
+      "type": "response",
+      "name": "description",
+      "guid": "efda83f4-3597-4d6b-93f5-f44001f8e3b7",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "description of ad",
+      "saveToVariableType": "server",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "d092e67b-5f65-4be0-9496-f986078cb890"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "7810ad8d-5963-4cc0-91b2-9247730bcc14"
+        }
+      ],
+      "x": 550,
+      "y": 649,
+      "rtype": "Variable",
+      "rsubtype": "Store Value in Variable",
+      "formdata": [
+        "description of ad",
+        "Text",
+        "server",
+        "0"
+      ],
+      "formnames": [
+        "varname",
+        "vartype",
+        "saveVarType",
+        "param"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Confirm",
+      "guid": "d092e67b-5f65-4be0-9496-f986078cb890",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "Advertisment",
+      "saveToVariableType": "server",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "2d7752ac-5167-4aaa-900e-004bd1221990"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "efda83f4-3597-4d6b-93f5-f44001f8e3b7"
+        }
+      ],
+      "x": 718,
+      "y": 665,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FFF712",
+        "Almost done!",
+        "",
+        "Virtual Reality Hub Partner System",
+        "",
+        "",
+        "Description:\n\n${serverVars.description of ad}\n----------------------------------\n**Ready to confirm your post?**",
+        "",
+        "",
+        "",
+        "false",
+        "Advertisment",
+        "server"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "send or no?",
+      "guid": "2d7752ac-5167-4aaa-900e-004bd1221990",
+      "reactionFields": [
+        "✅",
+        "❌"
+      ],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "✅",
+          "connections": [
+            "98886abf-d314-402e-a447-727e391a0339"
+          ]
+        },
+        {
+          "label": "❌",
+          "connections": [
+            "963eeb82-de57-42f1-964f-96e43f5de784"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "d092e67b-5f65-4be0-9496-f986078cb890"
+        }
+      ],
+      "x": 883,
+      "y": 692,
+      "rtype": "Reaction",
+      "rsubtype": "Add Reaction Listener",
+      "formdata": [
+        "${serverVars.Advertisment.id}",
+        "35",
+        "reactionemoji",
+        "reactionuser",
+        "BOOL_TRUE@@"
+      ],
+      "formnames": [
+        "message",
+        "duration",
+        "reactionemoji",
+        "reactionuser",
+        "react"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Confirm_1",
+      "guid": "98886abf-d314-402e-a447-727e391a0339",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": [
+            "2c0547f5-045c-4382-bae1-8bbbaf884c97"
+          ]
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2d7752ac-5167-4aaa-900e-004bd1221990"
+        }
+      ],
+      "x": 1073,
+      "y": 637,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "partnered-servers",
+        "00FF08",
+        "Partnered Server:",
+        "",
+        "Virtual Reality Hub Partner System",
+        "",
+        "",
+        "${serverVars.description of ad}\n----------------------------------\nSent by: ${dbsVars.CommandAuthor.id}",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Confirm_1_1",
+      "guid": "963eeb82-de57-42f1-964f-96e43f5de784",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "2d7752ac-5167-4aaa-900e-004bd1221990"
+        }
+      ],
+      "x": 1075,
+      "y": 773,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FF2B2B",
+        "Failed",
+        "",
+        "Virtual Reality Hub Error Reporter",
+        "",
+        "",
+        "Your cancelled your post, and it was not sent!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "response",
+      "name": "Confirm_1_1_1",
+      "guid": "2c0547f5-045c-4382-bae1-8bbbaf884c97",
+      "reactionFields": [],
+      "embedfields": [],
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "98886abf-d314-402e-a447-727e391a0339"
+        }
+      ],
+      "x": 1238,
+      "y": 659,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "00FFDD",
+        "Success!",
+        "",
+        "Virtual Reality Hub Partner System",
+        "",
+        "",
+        " Your post was sent, and it was sent to #patnered-servers!",
+        "",
+        "",
+        "",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    },
+    {
+      "type": "command",
+      "name": "partnerhelp",
+      "guid": "3d3e5fb5-f4a9-4c99-9d93-ca24d3e2230b",
+      "outputs": [
+        {
+          "label": "responses",
+          "connections": [
+            "87a8f7dd-7ace-4d83-b202-943714da7983"
+          ]
+        }
+      ],
+      "x": 338,
+      "y": 800
+    },
+    {
+      "type": "response",
+      "name": "Confirm_2",
+      "guid": "87a8f7dd-7ace-4d83-b202-943714da7983",
+      "reactionFields": [],
+      "embedfields": [],
+      "saveToVariable": "",
+      "saveToVariableType": "temp",
+      "outputs": [
+        {
+          "label": "next response",
+          "connections": []
+        }
+      ],
+      "inputs": [
+        {
+          "label": "trigger",
+          "id": "3d3e5fb5-f4a9-4c99-9d93-ca24d3e2230b"
+        }
+      ],
+      "x": 512,
+      "y": 802,
+      "rtype": "Message",
+      "rsubtype": "Send Embed",
+      "formdata": [
+        "${dbsVars.CommandChannel.id}",
+        "FFF712",
+        "How to use the partner cmd.",
+        "",
+        "Virtual Reality Hub Partner System",
+        "",
+        "",
+        "**Please post your advertisement!**\n\n**Ex.*partner :tada: Welcome from all of us at VR Hub:tada: \n\n:arrow_down:About Us:arrow_down:\n\n Virtual Reality Hub is the main server for all things VR. The VR Hub Community is ever-growing and would like to invite you to join to help spread the future of gaming through the gateway of VR!  We offer a variety of things, including active support to get you going on your VR journey, VR news, and much more! See what else we offer below!\n\n----------------------------------------------------------------------------\n:arrow_down:What we have to offer:arrow_down:\n\n:crown:  -Custom Website, with all the new VR news, Content creator section, partner/advertising section and free advertising  as well as content creator ads (free) and more.\n\n:first_place: - Extensive Reaction roles, with massive VR headset list, and other VR related roles!\n\n:speech_balloon:  -Active members!\n\n:speaking_head: - Voice chats!\n\n:calling: Server events and meetups! \n\n:incoming_envelope:  -Fast VR Support, for headsets, software and much more! \n\n:newspaper: -Daily VR news from new headsets to new and upcoming games releases, announcements, and software updates\n\n:desktop: -Featured YouTube content from popular YouTubers, and our server YouTubers get their content posted in our YouTube feed, as well as the ability to post patreon links in server through our free content creator partnership program. (You also get a space on our website to post content!)\n\n:handshake: -We do server partnering as well! (No requirements)\n\n:comet: -Free website advertising space available!\n\n:factory: -Active growing community!\n--------------------------------------------------------------------------------------\n\n:bell: So what are you waiting for? If you like VR then this is the server for you! Join us below!\n\n(Links:)\n-Banner:\nhttps://media.giphy.com/media/35MG6KoNC3zyAkGes0/giphy.gif\n\n-Website:\nhttp://virtualrealityhub.xyz/**",
+        "",
+        "",
+        "MAKER SURE TO INCLUDE ALL MEDIA LINKS!",
+        "false",
+        "",
+        "temp"
+      ],
+      "formnames": [
+        "channelname",
+        "color",
+        "title",
+        "url",
+        "authorname",
+        "authorimageurl",
+        "authorlink",
+        "description",
+        "thumbnail",
+        "image",
+        "footer",
+        "timestamp",
+        "saveToVariable",
+        "saveToVariableType"
+      ]
+    }
+  ]
+}
